@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:57 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/06 20:35:49 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/10 19:06:51 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,10 @@ long	ft_atoi(const char *str)
 		i++;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		r = (r * 10) + (str[i++] - '0');
+	r *= s;
 	if ((str[i] < 48 || str[i] > 57) && str[i])
 		ft_error();
 	else if (r > 2147483647 || r < -2147483648)
 		ft_error();
-	return (r * s);
+	return (r);
 }

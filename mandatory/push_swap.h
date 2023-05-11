@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:51 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/10 18:28:36 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:24:12 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_stack {
 t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstnew(long content);
 void		fill_nod(t_stack **a, char **av, int ac);
-// void		ft_lstclear(t_stack **lst, void (*del) (void *));
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 int			ft_lstsize(t_stack *lst);
