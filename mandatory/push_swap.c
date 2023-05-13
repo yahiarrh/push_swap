@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:00 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/12 13:43:59 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:33:19 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ static void	ft_move(t_stack **a, int i)
 
 	b = NULL;
 	if (i == 2)
-	{
-		if ((*a)->num > (*a)->next->num)
-			sa(a);
-	}
+		sa(a);
 	else if (i == 3)
 		threemov(a);
 	else if (i >= 4)
