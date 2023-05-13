@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:51 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/11 15:24:12 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:11:16 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void		rra(t_stack **a);
 void		rrb(t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
 void		threemov(t_stack **a);
-void		fivemov(t_stack **a, t_stack **b);
 void		more_mov(t_stack **a, t_stack **b);
 int			find_min(t_stack **a);
 int			min_index(t_stack **a);

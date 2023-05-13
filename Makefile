@@ -6,7 +6,7 @@ SRC	=	mandatory/alg.c       mandatory/ft_printf.c mandatory/ft_split.c  mandator
 
 SRCB	=	bonus/checker.c   bonus/ft_split.c  bonus/lst_utils.c bonus/movesr.c    bonus/movesrr.c   bonus/movessp.c   bonus/utils.c bonus/ft_strjoin.c
 
-GNL = get_next_line/get_next_line.c       get_next_line/get_next_line_utils.c
+GNL = gnl/get_next_line.c       gnl/get_next_line_utils.c
 
 CFLAGS	= -Wall -Wextra -Werror
 
@@ -14,7 +14,11 @@ CC		= cc
 
 RM 		= rm -rf
 
-LIBFTH = ./mandatory/push_swap.h ./get_next_line/get_next_line.h
+HEADERM =  mandatory/push_swap.h
+
+HEADERB =  bonus/checker.h
+
+HEADERG =  gnl/get_next_line.h
 
 OBJS	= $(SRC:.c=.o)
 
@@ -22,11 +26,15 @@ OBJSB	= $(SRCB:.c=.o)
 
 OBJSGNL	= $(GNL:.c=.o)
 
-/bonus/%.o :  /bonus/%.c $(LIBFTH) 
-	$(CC)  -c $(CFLAGS) $<
 
-/mandatory/%.o :  /mandatory/%.c $(LIBFTH) 
-	$(CC)  -c $(CFLAGS) $<
+mandatory/%.o :  mandatory/%.c   $(HEADERM)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+bonus/%.o :  bonus/%.c   $(HEADERB)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+gnl/%.o :  gnl/%.c   $(HEADERG)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 all	: $(NAME)
 

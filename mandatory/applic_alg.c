@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:17:46 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/10 18:45:43 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:47:14 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,18 @@ static int	re_b(t_stack **a, t_stack **b, int pv1)
 void	send_b(t_stack **a, t_stack **b, int pv1, int pv2)
 {
 	int		count;
-	long	ppv2;
 
 	count = 0;
-	ppv2 = -1e12;
 	while (ft_lstsize(*a) > 3)
 	{
 		if (ft_lstsize(*b) > 1 && (*b)->index <= pv2
-			&& (*b)->index > ppv2 && (*a)->index > pv1)
+			&& (*a)->index > pv1)
 			rr(a, b);
-		else if (ft_lstsize(*b) > 1 && (*b)->index <= pv2 && (*b)->index > ppv2)
+		else if (ft_lstsize(*b) > 1 && (*b)->index <= pv2)
 			rb(b, 1);
 		count += re_b(a, b, pv1);
 		if (count == pv1)
 		{
-			ppv2 = pv2;
 			pv2 = (ft_lstsize(*a) / 6) + pv1;
 			pv1 += ft_lstsize(*a) / 3;
 		}
@@ -87,6 +84,7 @@ void	send_a(t_stack **a, t_stack **b)
 	int	pos;
 	int	flag;
 
+	flag = 1;
 	while (*b)
 	{
 		pos = position(b, ((*a)->index - 1));

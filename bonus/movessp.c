@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:40 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/08 11:52:01 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:51:25 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void	pb(t_stack **a, t_stack **b)
 	t_stack	*tmp;
 	int		index;
 
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = NULL;
-	index = tmp->index;
-	if (*a != NULL)
+	if (ft_lstsize(*a) >= 1)
 	{
+		tmp = *a;
+		*a = (*a)->next;
+		tmp->next = NULL;
+		index = tmp->index;
 		if (!*b || !b)
 			*b = tmp;
 		else

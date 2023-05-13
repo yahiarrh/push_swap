@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:34:21 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/10 18:03:30 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:23:05 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "../get_next_line/get_next_line.h"
+# include "../gnl/get_next_line.h"
 
 typedef struct s_stack {
 	struct s_stack	*next;
@@ -43,7 +43,6 @@ void		rr(t_stack **a, t_stack **b);
 void		rra(t_stack **a);
 void		rrb(t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
-void		empty_stack(t_stack **a, t_stack **b);
 int			ft_strcmp(char *s1, char *s2);
 int			r_mov(char *instruct, t_stack **a, t_stack **b);
 int			ft_test(t_stack **a, t_stack **b);
