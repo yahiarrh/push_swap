@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:46:00 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/08 14:05:52 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:51:54 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,18 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	return (word[i] = NULL, word);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	unsigned char	*s11;
+	unsigned char	*s22;
+	int				i;
+
+	s11 = (unsigned char *)s1;
+	s22 = (unsigned char *)s2;
+	i = 0;
+	while (s11[i] && s22[i] && s11[i] == s22[i])
+		i++;
+	return (s11[i] - s22[i]);
 }

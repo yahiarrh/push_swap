@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:51:13 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/10 18:03:48 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:47:06 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ void	check_dup(t_stack *a)
 		while (a->num != ' ' && tmp != NULL)
 		{
 			if (a->num == tmp->num)
+			{
+				empty_stack(a, 0, 1);
 				ft_error();
+			}
 			tmp = tmp->next;
 		}
 		a = a->next;

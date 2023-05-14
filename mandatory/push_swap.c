@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:00 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/13 13:33:19 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:47:54 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ static void	ft_move(t_stack **a, int i)
 		sa(a);
 	else if (i == 3)
 		threemov(a);
-	else if (i >= 4)
+	else if (i >= 4 && i <= 15)
+		fivemov(a, &b);
+	else if (i > 15)
 		more_mov(a, &b);
 }
 
@@ -62,7 +64,10 @@ void	check_dup(t_stack *a)
 		while (tmp != NULL)
 		{
 			if (a->num == tmp->num)
+			{
+				empty_stack(a, 0, 1);
 				ft_error();
+			}
 			tmp = tmp->next;
 		}
 		a = a->next;
@@ -92,14 +97,13 @@ int	main(int ac, char **av)
 		fill_nod(&a, av, ac);
 		check_dup(a);
 		if (!if_sort(&a))
+		{
+			empty_stack(a, 0, 1);
 			return (0);
+		}
 		ft_indexing(&a);
 		i = ft_lstsize(a);
 		ft_move(&a, i);
 	}
-	while (a)
-	{
-		free(a);
-		a = a->next;
-	}
+	empty_stack(a, 0, 1);
 }

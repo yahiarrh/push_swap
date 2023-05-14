@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:34:21 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/13 12:23:05 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:52:06 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ char		**dealc(char **s, int i);
 char		**ft_split(char const *s, char c);
 long		ft_atoi(const char *str);
 char		*ft_strjoinn(char *s1, char *s2);
+void		empty_stack(t_stack *a, t_stack *b, int flag);
 #endif

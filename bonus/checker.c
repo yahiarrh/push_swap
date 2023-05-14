@@ -6,38 +6,41 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:48:07 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/13 12:33:02 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:53:36 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	empty_stack(t_stack *a, t_stack *b)
+void	empty_stack(t_stack *a, t_stack *b, int flag)
 {
-	while (a)
+	if (flag == 1)
 	{
-		free(a);
-		a = a->next;
+		while (a)
+		{
+			free(a);
+			a = a->next;
+		}
 	}
-	while (b)
+	else if (flag == 2)
 	{
-		free(b);
-		b = b->next;
+		while (a)
+		{
+			free(a);
+			a = a->next;
+		}
+		while (b)
+		{
+			free(b);
+			b = b->next;
+		}
 	}
 }
 
-int	ft_strcmp(char *s1, char *s2)
+void	both(t_stack **a, t_stack **b)
 {
-	unsigned char	*s11;
-	unsigned char	*s22;
-	int				i;
-
-	s11 = (unsigned char *)s1;
-	s22 = (unsigned char *)s2;
-	i = 0;
-	while (s11[i] && s22[i] && s11[i] == s22[i])
-		i++;
-	return (s11[i] - s22[i]);
+	empty_stack(*a, *b, 2);
+	ft_error();
 }
 
 int	r_mov(char *instruct, t_stack **a, t_stack **b)
@@ -78,7 +81,7 @@ int	ft_test(t_stack **a, t_stack **b)
 			sa(a);
 		else
 			if (!r_mov(instruct, a, b))
-				ft_error();
+				both(a, b);
 		free(instruct);
 		instruct = get_next_line(0);
 		count++;
@@ -110,6 +113,6 @@ int	main(int ac, char **av)
 			else
 				write(1, "KO\n", 3);
 		}
-		empty_stack(a, b);
+		empty_stack(a, b, 2);
 	}
 }
