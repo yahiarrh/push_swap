@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:17:46 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/11 15:47:14 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:23:31 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	upper_pos(t_stack **a, t_stack **b, int flag)
 			ra(a, 1);
 		}
 		else
-			rrb(b);
+			rrb(b, 1);
 	}
 	pa(a, b);
 	return (flag);
@@ -100,7 +100,7 @@ void	send_a(t_stack **a, t_stack **b)
 		}
 		while (ft_lstlast(*a)->index == (*a)->index - 1)
 		{
-			rra(a);
+			rra(a, 1);
 		}
 		if (ft_lstlast(*a)->index > (*a)->index)
 			flag = 1;

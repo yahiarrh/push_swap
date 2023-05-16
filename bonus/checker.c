@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:48:07 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/14 15:53:36 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:14:25 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	r_mov(char *instruct, t_stack **a, t_stack **b)
 		rrr(a, b);
 	else if (!ft_strcmp(instruct, "sb\n"))
 		sb(b);
+	else if (!ft_strcmp(instruct, "ss\n"))
+		ss(a, b);
 	else
 		return (0);
 	return (1);

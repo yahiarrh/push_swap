@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 13:45:28 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2023/05/08 11:51:57 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:13:30 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rra(t_stack **a)
 
 	tmp = ft_lstlast(*a);
 	t = *a;
-	if (*a)
+	if (ft_lstsize(*a) >= 2)
 	{
 		while (t->next->next != NULL)
 		{
@@ -38,7 +38,7 @@ void	rrb(t_stack **b)
 
 	tmp = ft_lstlast(*b);
 	t = *b;
-	if (*b)
+	if (ft_lstsize(*b) >= 2)
 	{
 		while (t->next->next != NULL)
 		{
