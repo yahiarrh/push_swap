@@ -45,7 +45,7 @@ void	send_b(t_stack **a, t_stack **b, int pv1, int pv2)
 	}
 }
 
-static int	upper_pos(t_stack **a, t_stack **b, int flag)
+static int	lower_pos(t_stack **a, t_stack **b, int flag)
 {
 	while (((*a)->index - 1) != (*b)->index)
 	{
@@ -62,7 +62,7 @@ static int	upper_pos(t_stack **a, t_stack **b, int flag)
 	return (flag);
 }
 
-static int	lower_pos(t_stack **a, t_stack **b, int flag)
+static int	upper_pos(t_stack **a, t_stack **b, int flag)
 {
 	while (((*a)->index - 1) != (*b)->index)
 	{
@@ -92,11 +92,11 @@ void	send_a(t_stack **a, t_stack **b)
 			sb(b);
 		else if (pos > (ft_lstsize(*b) / 2))
 		{
-			flag = upper_pos(a, b, flag);
+			flag = lower_pos(a, b, flag);
 		}
 		else if (pos <= (ft_lstsize(*b) / 2))
 		{
-			flag = lower_pos(a, b, flag);
+			flag = upper_pos(a, b, flag);
 		}
 		while (ft_lstlast(*a)->index == (*a)->index - 1)
 		{
